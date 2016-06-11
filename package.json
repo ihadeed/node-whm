@@ -1,0 +1,24 @@
+{
+  "name": "node-whm",
+  "version": "0.0.1",
+  "description": "WHM (Web Host Manager) API 1 Wrapper for NodeJS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihadeed/node-whm.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ihadeed/node-whm/issues"
+  },
+  "homepage": "https://github.com/ihadeed/node-whm#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6"
+  }
+}

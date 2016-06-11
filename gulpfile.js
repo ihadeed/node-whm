@@ -5,6 +5,5 @@ var
 
 gulp.task('build:js', function(done){
   return tsProject.src()
-    .pipe(ts(tsProject))
-    .js.pipe(gulp.dest('dist'));
+    .pipe(ts(tsProject)).js.pipe(gulp.dest('dist'));
 });
