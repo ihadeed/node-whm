@@ -13,6 +13,7 @@
   ],
   "files": [
     "src/index.ts",
-    "typings/node/node.d.ts"
+    "typings/node/node.d.ts",
+    "typings/es6-shim/es6-shim.d.ts"
   ]
 }
