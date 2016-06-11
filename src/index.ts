@@ -41,6 +41,38 @@ class NodeWHM {
     );
   }
 
+  /**
+   * List IP addresses available
+   * @returns {Promise<any>}
+   */
+  listIPAddresses(){
+    return new Promise<any>(
+      (resolve, reject) => {
+        http.get(this.getRequestOptions('listips'), function(err, res, body){
+          if(err) reject(err);
+          else resolve(body);
+        });
+      }
+    );
+  }
+
+  /**
+   * Create an account
+   * @returns {Promise<any>}
+   */
+  createAccount(){
+    return new Promise<any>(
+      (resolve, reject) => {
+        let opts = this.getRequestOptions('createacct');
+        opts.url = opts.url + '&username=mytestacclol&domain=mytestacclo.com&password=hamalaskyadonut123&';
+        http.get(opts, function(err, res, body){
+          if(err) reject(err);
+          else resolve(body);
+        });
+      }
+    );
+  }
+
   private getRequestOptions(url: string){
     return {
       url: this.serverUrl + '/' + this.options.apiType + '/' + url + '?api.version=' + this.options.version,
