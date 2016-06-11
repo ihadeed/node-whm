@@ -1,6 +1,6 @@
-var http = require('request');
+var http = require('request').defaults({encoding: 'utf-8'});
 
-export class NodeWHM {
+class NodeWHM {
 
   private securityToken: string;
   private options: any = {
@@ -19,6 +19,7 @@ export class NodeWHM {
         this.options[param] = options[param];
       }
     }
+    console.error('WHM ' + this.username + ':' + this.remoteAccessKey);
   }
 
   /**
@@ -26,13 +27,8 @@ export class NodeWHM {
    * @returns {Promise<any>}
    */
   listAccounts(){
-    let url = this.serverUrl + '/' + this.options.apiType + '/listaccts?api.version=' + this.options.version;
-    let options = {
-      url: url,
-      headers: {
-        Authorization: 'WHM ' + this.username + ':' + this.remoteAccessKey
-      }
-    };
+    let url = 'listaccts';
+    let options = this.getRequestOptions(url);
     return new Promise<any>(
       (resolve, reject) => {
         http.get(options, function(err, res, body){
@@ -44,6 +40,50 @@ export class NodeWHM {
       }
     );
   }
+
+  private getRequestOptions(url: string){
+    return {
+      url: this.serverUrl + '/' + this.options.apiType + '/' + url + '?api.version=' + this.options.version,
+      headers: {
+        Authorization: 'WHM ' + this.username + ':' + this.remoteAccessKey
+      }
+    }
+  }
+}
+
+interface AccountData {
+  email: string;
+  user: string;
+  ip: string;
+  plan: string;
+  domain: string;
+  diskused: string;
+  is_locked: number;
+  maxaddons: string;
+  maxsub: string;
+  disklimit: string;
+  maxparked: string;
+  theme: string;
+  outgoing_mail_hold: number;
+  outgoing_mail_suspended: number;
+  partition: string;
+  owner: string;
+  maxsql: string;
+  max_email_per_hour: string;
+  min_defer_fail_to_trigger_protection: string;
+  suspendedtime: number;
+  legacy_backup: number;
+  maxpop: string;
+  unix_startdate: number;
+  suspendreason: string;
+  startdate: string;
+  backup: number;
+  suspended: number;
+  max_defere_fail_percentage: string;
+  ipv6: any[],
+  maxlst: string;
+  shell: string;
+  maxftp: string;
 }
 
 export = NodeWHM;
