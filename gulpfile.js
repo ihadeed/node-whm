@@ -1,9 +1,15 @@
 var
   gulp = require('gulp'),
-  ts = require('gulp-typescript'),
-  tsProject = ts.createProject('tsconfig.json');
+  exec = require('child_process').exec;
 
 gulp.task('build:js', function(done){
-  return tsProject.src()
-    .pipe(ts(tsProject)).js.pipe(gulp.dest('dist'));
+  exec('tsc', function(err, stdout, stderr){
+    console.log(stdout);
+    console.error(stderr);
+    done(err);
+  });
+});
+
+gulp.task('watch:js', function(){
+  return gulp.watch('src/**/*.ts', ['build:js']);
 });
