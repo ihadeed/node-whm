@@ -64,18 +64,23 @@ client.createAccount({
 ```
 
 
+
+
 ## Methods
 
-### createAccount(options: CreateAccountOptions): Promise<any>
+#### `createAccount(options: CreateAccountOptions): Promise<any>`
 
-### terminateAccount(user: string): Promise<any>
+#### `terminateAccount(user: string): Promise<any>`
 
-### listAccounts(): Promise<AccountData[]>
+#### `listAccounts(): Promise<AccountData[]>`
 
-### listIPAddresses(): Promise<any>
+#### `listIPAddresses(): Promise<any>`
+
+
+
 
 ## Interfaces
 
-### WHMOoptions
-### CreateAccountOptions
-### AccountData
+#### `WHMOoptions`
+#### `CreateAccountOptions`
+#### `AccountData`
