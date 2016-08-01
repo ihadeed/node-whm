@@ -17,13 +17,7 @@
     "url": "https://github.com/ihadeed/node-whm/issues"
   },
   "homepage": "https://github.com/ihadeed/node-whm#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-exec": "^2.1.2",
-    "gulp-typescript": "^2.13.6"
-  },
   "dependencies": {
-    "express": "^4.13.4",
     "lodash": "^4.14.1",
     "request": "^2.73.0"
   }
