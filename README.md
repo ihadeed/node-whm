@@ -37,15 +37,15 @@ whmClient.createAccount({
 
 ### Typescript
 ```typescript
-import { WHM } from 'node-whm';
+import { Client, WHMOptions } from 'node-whm';
 
-const whmClientOptions: WHM.WHMOptions = {
+const whmClientOptions: WHMOptions = {
    serverUrl: 'https://myserver.com:2087',
    remoteAccessKey: 'remoteAccessKeyHere',
    username: 'resellerOrRootUser'
 };
 
-const client: WHM.Client = new WHM.Client(whmClientOptions);
+const client: Client = new Client(whmClientOptions);
 
 client.createAccount({
            username: 'myuser',
