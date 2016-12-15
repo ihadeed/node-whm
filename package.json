@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "WHM (Web Host Manager) API 1 Wrapper for NodeJS",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +19,13 @@
   },
   "homepage": "https://github.com/ihadeed/node-whm#readme",
   "dependencies": {
-    "lodash": "^4.14.2",
-    "request": "^2.73.0"
+    "lodash": "^4.17.2",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.43",
+    "@types/node": "^6.0.52",
+    "@types/request": "0.0.36",
+    "typescript": "^2.1.4"
   }
 }

@@ -10,7 +10,7 @@ To build this, run `tsc` at the root directory. Or install via npm `npm install 
 ## Usage
 ### JavaScript
 ```javascript
-var WHM = require('node-whm/dist');
+var WHM = require('node-whm');
 var whmClient = new WHM.Client({
     serverUrl: 'https://myserver.com:2087',
     remoteAccessKey: 'remoteAccessKeyHere',
@@ -37,14 +37,15 @@ whmClient.createAccount({
 
 ### Typescript
 ```typescript
-import {WHM} from 'node-whm/dist';
+import { WHM } from 'node-whm';
 
-let whmClientOptions: WHM.WHMOptions = {
+const whmClientOptions: WHM.WHMOptions = {
    serverUrl: 'https://myserver.com:2087',
    remoteAccessKey: 'remoteAccessKeyHere',
    username: 'resellerOrRootUser'
 };
-let client: WHM.Client = new WHM.Client(whmClientOptions);
+
+const client: WHM.Client = new WHM.Client(whmClientOptions);
 
 client.createAccount({
            username: 'myuser',
@@ -79,8 +80,10 @@ client.createAccount({
 
 
 
-## Interfaces
+## Interfaces _`TypeScript`_
 
 #### `WHMOoptions`
+
 #### `CreateAccountOptions`
+
 #### `AccountData`

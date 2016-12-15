@@ -3,17 +3,14 @@
     "module": "commonjs",
     "target": "es5",
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "lib": [
+      "es6",
+      "dom"
+    ]
   },
   "exclude": [
-    "node_modules"
-  ],
-  "filesGlob": [
-    "src/**/*.ts"
-  ],
-  "files": [
-    "src/index.ts",
-    "typings/node/node.d.ts",
-    "typings/es6-shim/es6-shim.d.ts"
+    "node_modules",
+    "dist"
   ]
 }
